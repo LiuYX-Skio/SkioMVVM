@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="ScrollableLayout">
+
+        <attr name="scrollable_maxScroll" format="dimension"/>
+        <attr name="scrollable_scrollerFlywheel" format="boolean"/>
+        <attr name="scrollable_considerIdleMillis" format="integer"/>
+        <attr name="scrollable_defaultCloseUp" format="boolean"/>
+        <attr name="scrollable_friction" format="float"/>
+
+        <attr name="scrollable_closeUpAnimationMillis" format="integer"/>
+        <attr name="scrollable_closeUpAnimatorInterpolator" format="reference"/>
+
+        <attr name="scrollable_autoMaxScroll" format="boolean"/>
+        <attr name="scrollable_autoMaxScrollViewId" format="reference"/>
+
+        <attr name="scrollable_scrollingHeaderId" format="reference"/>
+
+    </declare-styleable>
+    <declare-styleable name="Px_Layout_Layout">
+        <attr name="layout_width_px" format="string"/>
+        <attr name="layout_height_px" format="string"/>
+        <attr name="layout_margin_px" format="string"/>
+        <attr name="layout_marginLeft_px" format="string"/>
+        <attr name="layout_marginTop_px" format="string"/>
+        <attr name="layout_marginRight_px" format="string"/>
+        <attr name="layout_marginBottom_px" format="string"/>
+        <attr name="layout_marginStart_px" format="string"/>
+        <attr name="layout_marginEnd_px" format="string"/>
+        <attr name="layout_textSize_px" format="string"/>
+        <attr name="layout_maxWidth_px" format="string"/>
+        <attr name="layout_maxHeight_px" format="string"/>
+        <attr name="layout_minWidth_px" format="string"/>
+        <attr name="layout_minHeight_px" format="string"/>
+        <attr name="layout_padding_px" format="string"/>
+        <attr name="layout_paddingTop_px" format="string"/>
+        <attr name="layout_paddingBottom_px" format="string"/>
+        <attr name="layout_paddingLeft_px" format="string"/>
+        <attr name="layout_paddingRight_px" format="string"/>
+        <attr name="layout_width_design" format="integer"/>
+        <attr name="layout_height_design" format="integer"/>
+        <attr name="layout_is_radio" format="boolean"/>
+    </declare-styleable>
+
+</resources>

@@ -1,0 +1,88 @@
+apply plugin: 'com.android.library'
+//apply plugin: 'com.github.dcendents.android-maven'
+
+//group='com.github.sd6352051'
+android {
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+    defaultConfig {
+        minSdkVersion  17
+        targetSdkVersion 29
+        versionCode 102
+        versionName "1.0.2"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation rootProject.ext.dependencies["appcompat"]
+    implementation rootProject.ext.dependencies["constraintlayout"]
+    testImplementation rootProject.ext.dependencies["junit"]
+    androidTestImplementation rootProject.ext.dependencies["runner"]
+    androidTestImplementation rootProject.ext.dependencies["espresso"]
+
+    api rootProject.ext.dependencies["eventbus"]
+    api rootProject.ext.dependencies["glide"]
+    api rootProject.ext.dependencies["glideOkhttp3"]
+    api rootProject.ext.dependencies["glideTransformations"]
+    api 'com.zhy:okhttputils:2.6.2'
+    api files('libs/bottomView.jar')
+    api project(':refresh-header')
+    api project(':refresh-layout')
+//    RxJava2.0所需依赖
+
+    api rootProject.ext.dependencies["rxjava"]
+
+//    Rxandroid2.0线程调度依赖
+    api rootProject.ext.dependencies["rxandroid"]
+
+    // 大神写的这个库可以支持到rxjava2.X
+    api rootProject.ext.dependencies["retrofit2"]
+
+    //Retrofit2.0所需依赖
+    api rootProject.ext.dependencies["retrofit"]
+
+    //结果转为实体类所需依赖
+    api rootProject.ext.dependencies["converter"]
+
+        implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0' //RxJava2.0+Retrofit2.0适配依赖
+    //OKHttp3.0依赖
+    api rootProject.ext.dependencies["okhttp3"]
+
+    //OKHttp优化策略依赖
+    api rootProject.ext.dependencies["squareup"]
+
+    //结果转为基本类型所需依赖
+    api rootProject.ext.dependencies["scalars"]
+
+
+
+    //dialog
+    api rootProject.ext.dependencies["sweetalert"]
+
+    //KLog
+    api rootProject.ext.dependencies["klog"]
+
+    //处理rxjava内存泄漏,基础组件
+    api rootProject.ext.dependencies["rxlifecycle"]
+
+    //如果你想绑定到Android特定的生命周期
+    api rootProject.ext.dependencies["rxlifecycle-android"]
+
+    //如果你想要预先写好的Activities和Fragments，你可以作为提供者的子类
+    api rootProject.ext.dependencies["rxlifecycle-components"]
+    api rootProject.ext.dependencies["persistentCookieJar"]
+    // 上传下载进度监听
+    api rootProject.ext.dependencies["progressmanager"]
+
+
+}

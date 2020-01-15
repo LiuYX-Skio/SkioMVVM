@@ -1,0 +1,56 @@
+apply plugin: 'com.android.application'
+
+android {
+
+    dataBinding {
+        enabled = true
+    }
+
+
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+    buildToolsVersion "29.0.1"
+    defaultConfig {
+        applicationId "com.skio"
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+        versionCode rootProject.ext.android["versionCode"]
+        versionName rootProject.ext.android["versionName"]
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        ndk {
+            // 设置支持的SO库架构
+            abiFilters "armeabi-v7a", "x86"
+        }
+
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation rootProject.ext.dependencies["appcompat"]
+    implementation rootProject.ext.dependencies["constraintlayout"]
+    testImplementation rootProject.ext.dependencies["junit"]
+    androidTestImplementation rootProject.ext.dependencies["runner"]
+    androidTestImplementation rootProject.ext.dependencies["espresso"]
+
+    implementation project(':baselibrary')
+    implementation files('libs/fastjson-1.1.34.android.jar')
+    implementation rootProject.ext.dependencies["multidex"]
+    implementation rootProject.ext.dependencies["extensions"]
+
+}

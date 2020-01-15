@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:lyx="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <data>
+
+        <variable
+            name="data"
+            type="com.skio.view_model.MainViewModel" />
+        <variable
+            name="lines"
+            type="com.skio.entity.EmptyEntity" />
+    </data>
+
+    <com.skio.view.PxLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{data.title.cityName}"/>
+        <Button
+            android:id="@+id/bt_dataBinding"
+            android:layout_width="0dp"
+            lyx:layout_width_px="200lw"
+            lyx:layout_height_px="80lh"
+            android:layout_height="0dp"
+            android:text="改变数据"
+             />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
+
+
+    </com.skio.view.PxLinearLayout>
+
+</layout>
